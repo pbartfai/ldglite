@@ -7,6 +7,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install developement packages
-        run:  apt-get update ; apt-get --no-install-recommends install -y build-essential debhelper gcc make freeglut3-dev g++ libpng-dev libosmesa6-dev
+        run:  sudo apt-get update ; sudo apt-get --no-install-recommends install -y build-essential debhelper gcc make freeglut3-dev g++ libpng-dev libosmesa6-dev
       - name: Build
         run: cd ldglite/app ; make -f makefile.linux
