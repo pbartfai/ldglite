@@ -9,4 +9,4 @@ jobs:
       - name: Install developement packages
         run:  sudo apt-get update ; sudo apt-get --no-install-recommends install -y build-essential debhelper gcc make freeglut3-dev g++ libpng-dev libosmesa6-dev
       - name: Build
-        run: cd ldglite/app ; make -f makefile.linux
+        run: cd app ; make -f makefile.linux
