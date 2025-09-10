@@ -1,0 +1,12 @@
+name: Build ldglite
+on: [push, pull_request]
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install developement packages
+        run:  apt-get update ; apt-get --no-install-recommends install -y build-essential debhelper gcc make freeglut3-dev g++ libpng-dev libosmesa6-dev
+      - name: Build
+        run: cd ldglite/app ; make -f makefile.linux
